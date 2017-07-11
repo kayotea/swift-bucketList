@@ -54,35 +54,69 @@ class BucketListViewController: UITableViewController, AddItemTableViewControlle
     //listen for user to click on arrow
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //perform segue given sender
-        performSegue(withIdentifier: "EditItemSegue", sender: indexPath)
+        performSegue(withIdentifier: "AddItemSegue", sender: indexPath)
     }
     
     //delegate - control cancel of modal view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //click on add item
-        if segue.identifier == "AddItemSegue" {
+        //if something sent
+        if let send_me = sender {
             
+            //if sender is from bar button
+            if send_me is UIBarButtonItem {
+                let navigationController = segue.destination as! UINavigationController
+                let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+                
+                addItemTableViewController.delegate = self
+            }
+                
+            //if sender is from accessory button
+            else {
+                let navigationController = segue.destination as! UINavigationController
+                let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+                
+                addItemTableViewController.delegate = self
+                
+                let indexPath = sender as! NSIndexPath //sender used
+                print("SENDER:",indexPath)
+                let item = items[indexPath.row]
+                
+                addItemTableViewController.item = item
+                addItemTableViewController.indexPath = indexPath
+            }
+        }
+        //if no sender
+        else {
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
-            
             addItemTableViewController.delegate = self
         }
+        
+        ////click on add item
+        //if segue.identifier == "AddItemSegue" {
             
-        //click on a row
-        else if segue.identifier == "EditItemSegue" {
+        //    let navigationController = segue.destination as! UINavigationController
+        //    let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             
-            let navigationController = segue.destination as! UINavigationController
-            let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
+        //    addItemTableViewController.delegate = self
+        //}
             
-            addItemTableViewController.delegate = self
+        ////click on a row
+        //else if segue.identifier == "EditItemSegue" {
             
-            let indexPath = sender as! NSIndexPath
-            let item = items[indexPath.row]
+        //    let navigationController = segue.destination as! UINavigationController
+        //    let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             
-            addItemTableViewController.item = item
-            addItemTableViewController.indexPath = indexPath
-        }
+        //    addItemTableViewController.delegate = self
+            
+        //    let indexPath = sender as! NSIndexPath //sender used
+        //    print("SENDER:",indexPath)
+        //    let item = items[indexPath.row]
+            
+        //    addItemTableViewController.item = item
+        //    addItemTableViewController.indexPath = indexPath
+        //}
     }
     //function that lets BLVC be CBD //cancel
     func cancelButtonPressed(by controller: AddItemTableViewController) {
