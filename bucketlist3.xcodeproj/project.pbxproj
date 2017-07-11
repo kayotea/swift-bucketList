@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7F02841F14359B00EE9668 /* AddItemTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7F02831F14359B00EE9668 /* AddItemTableViewControllerDelegate.swift */; };
+		0CAB76871F1425CD00731533 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAB76861F1425CD00731533 /* AddItemTableViewController.swift */; };
 		0CD56C601F141E1000C42E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD56C5F1F141E1000C42E3A /* AppDelegate.swift */; };
-		0CD56C621F141E1000C42E3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD56C611F141E1000C42E3A /* ViewController.swift */; };
+		0CD56C621F141E1000C42E3A /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD56C611F141E1000C42E3A /* BucketListViewController.swift */; };
 		0CD56C651F141E1000C42E3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD56C631F141E1000C42E3A /* Main.storyboard */; };
 		0CD56C671F141E1000C42E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD56C661F141E1000C42E3A /* Assets.xcassets */; };
 		0CD56C6A1F141E1000C42E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD56C681F141E1000C42E3A /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C7F02831F14359B00EE9668 /* AddItemTableViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemTableViewControllerDelegate.swift; sourceTree = "<group>"; };
+		0CAB76861F1425CD00731533 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		0CD56C5C1F141E1000C42E3A /* bucketlist3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bucketlist3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD56C5F1F141E1000C42E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CD56C611F141E1000C42E3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CD56C611F141E1000C42E3A /* BucketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListViewController.swift; sourceTree = "<group>"; };
 		0CD56C641F141E1000C42E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CD56C661F141E1000C42E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CD56C691F141E1000C42E3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				0CD56C5F1F141E1000C42E3A /* AppDelegate.swift */,
-				0CD56C611F141E1000C42E3A /* ViewController.swift */,
+				0CD56C611F141E1000C42E3A /* BucketListViewController.swift */,
 				0CD56C631F141E1000C42E3A /* Main.storyboard */,
+				0CAB76861F1425CD00731533 /* AddItemTableViewController.swift */,
+				0C7F02831F14359B00EE9668 /* AddItemTableViewControllerDelegate.swift */,
 				0CD56C661F141E1000C42E3A /* Assets.xcassets */,
 				0CD56C681F141E1000C42E3A /* LaunchScreen.storyboard */,
 				0CD56C6B1F141E1000C42E3A /* Info.plist */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CD56C621F141E1000C42E3A /* ViewController.swift in Sources */,
+				0CD56C621F141E1000C42E3A /* BucketListViewController.swift in Sources */,
 				0CD56C601F141E1000C42E3A /* AppDelegate.swift in Sources */,
+				0C7F02841F14359B00EE9668 /* AddItemTableViewControllerDelegate.swift in Sources */,
+				0CAB76871F1425CD00731533 /* AddItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,11 +425,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = BQB47EHN8G;
 				INFOPLIST_FILE = bucketlist3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.bucketlist3";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,11 +441,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = BQB47EHN8G;
 				INFOPLIST_FILE = bucketlist3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.bucketlist3";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.todo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -516,6 +530,7 @@
 				0CD56C861F141E1000C42E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CD56C871F141E1000C42E3A /* Build configuration list for PBXNativeTarget "bucketlist3Tests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +539,7 @@
 				0CD56C891F141E1000C42E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CD56C8A1F141E1000C42E3A /* Build configuration list for PBXNativeTarget "bucketlist3UITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +548,7 @@
 				0CD56C8C1F141E1000C42E3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
